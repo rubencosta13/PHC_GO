@@ -2,3 +2,4 @@ node_modules
 .gitpod.yml
 .env
 test.*
+build
