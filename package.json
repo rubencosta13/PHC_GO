@@ -2,10 +2,9 @@
   "name": "phc_go",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node-dev --poll index.ts"
   },
   "repository": {
     "type": "git",
@@ -19,8 +18,14 @@
   },
   "homepage": "https://github.com/rubencosta13/PHC_GO#readme",
   "dependencies": {
+    "@types/node-fetch": "^2.6.1",
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
-    "node-fetch": "^3.2.4"
+    "node-fetch": "^2.6.7",
+    "ts-node": "^10.8.0",
+    "ts-node-dev": "^1.1.8"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
   }
 }
