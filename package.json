@@ -1,6 +1,6 @@
 {
   "name": "@rcosta13/phcgohandler",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "PHC GO Database Handler",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
