@@ -1,5 +1,5 @@
 {
-  "name": "phc_go_handler",
+  "name": "phcgohandler",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
