@@ -1,10 +1,10 @@
 {
-  "name": "phc_go",
+  "name": "phc_go_handler",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "start": "ts-node-dev --poll index.ts"
+    "start": "ts-node-dev --poll src/index.ts"
   },
   "repository": {
     "type": "git",

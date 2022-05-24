@@ -1,16 +1,13 @@
 import fetch from "node-fetch";
-import dotenv from "dotenv";
-dotenv.config()
-
 
 /**
- * @param {string} data - Column rows to be shown 
- * @param {string} table - Table name
+ * @param {string} query - Query to be executed
+ * @param {string} companyId - Company's Id
  * @returns {array} Returns an array 
  */
-const getData = async (data: string, table: string) => {
+const customQuery = async (query: string, companyId: string) => {
     const errors: string[] = []
-    const response = await fetch(`https://sis09.phcgo.net/${process.env.ID}/PHCWS/REST/UtilitariosWS/SqlStudioRunCommand?suppressWarnings=true&suppressErrors=true`, {
+    const response = await fetch(`https://sis09.phcgo.net/${companyId}/PHCWS/REST/UtilitariosWS/SqlStudioRunCommand?suppressWarnings=true&suppressErrors=true`, {
         "headers": {
             "accept": "application/json, text/plain, */*",
             "accept-language": "pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7",
@@ -26,7 +23,7 @@ const getData = async (data: string, table: string) => {
             "timezone": "60",
             "Referrer-Policy": "strict-origin-when-cross-origin"
         },
-        "body": `command=%7B%22CmdText%22%3A%22SELECT%20%5Cn%20%20%20${encodeURI(data)}%5CnFROM%5Cn%20%20%20${encodeURI(table)}%22%2C%22CmdType%22%3A1%7D`,
+        "body": `command=%7B%22CmdText%22%3A%22${encodeURI(query)}%22%2C%22CmdType%22%3A1%7D`,
         "method": "POST"
     })
     const body = JSON.parse(await response.text());
@@ -35,18 +32,6 @@ const getData = async (data: string, table: string) => {
         throw new Error(JSON.stringify(errors));
     }
     return body.result;
-
 };
 
-
-const start = async () => {
-    try {
-        const tasks = await getData("summary, description, startdate, enddate, closingdate, closinghour, username", "tasks"); // Obter dados sobre as tarefas
-        const data = await getData("usr1, usr2", "Stfami");
-        // const artigos = await getData("faminome, ref, design", "st"); // Obter dados sobre os artigos & servicos
-        console.log(tasks)
-    } catch (error: any) {
-        console.error(error.message);
-    }
-};
-start();
+export { customQuery }
