@@ -2,7 +2,11 @@
   "name": "@rcosta13/phcgohandler",
   "version": "1.0.2",
   "description": "PHC GO Database Handler",
-  "main": "index.ts",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
   "scripts": {
     "start": "ts-node-dev --poll src/index.ts",
     "build": "npm run clean && tsc",
