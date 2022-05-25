@@ -13,7 +13,13 @@
     "type": "git",
     "url": "git+https://github.com/rubencosta13/PHC_GO.git"
   },
-  "keywords": [],
+  "keywords": [
+    "phcgohandler",
+    "phcgo",
+    "query",
+    "phc",
+    "database"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
