@@ -1,12 +1,9 @@
 {
   "name": "phcgohandler",
-  "version": "1.0.4",
-  "description": "PHC GO Database Handler",
-  "main": "./build/index.js",
-  "types": "./build/index.d.ts",
-  "files": [
-    "build/**/*"
-  ],
+  "version": "1.0.8",
+  "description": "",
+  "type": "module",
+  "main": "index.ts",
   "scripts": {
     "start": "ts-node-dev --poll src/index.ts",
     "build": "npm run clean && tsc",
@@ -17,7 +14,13 @@
     "type": "git",
     "url": "git+https://github.com/rubencosta13/PHC_GO.git"
   },
-  "keywords": [],
+  "keywords": [
+    "phcgohandler",
+    "phcgo",
+    "query",
+    "phc",
+    "database"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
