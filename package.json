@@ -3,7 +3,7 @@
   "version": "1.0.10",
   "description": "",
   "type": "module",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "start": "ts-node-dev --poll src/index.ts",
     "build": "npm run clean && tsc",
